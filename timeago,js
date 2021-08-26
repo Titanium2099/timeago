@@ -2,3 +2,7 @@
 // yesterday at *:** (am/pm)
 const relativeTime = [["minute","hour","day","week", "month","year"],"about an ", " ago"];
 const agoTime = [["minute","hour","day","week", "month","year"], 'ago'];
+//({timestamp:'', UTC:''})
+function timeago(e){
+console.log(e)
+}
