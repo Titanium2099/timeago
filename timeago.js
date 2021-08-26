@@ -4,7 +4,6 @@ const relativeTime = [["minute","hour","day","week", "month","year"],"about an "
 const agoTime = [["minute","hour","day","week", "month","year"], 'ago'];
 //({timestamp:'', UTC:''})
 function timeago(e){
-//console.log(e);
-  document.getElementById('body').innerHTML = e;
+console.log(e);
 }
 timeago({"UTC":true,"TimeStamp":"2141234124"})
