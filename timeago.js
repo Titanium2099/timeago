@@ -8,16 +8,8 @@ var agoTime = [["minute","hour","day","week", "month","year"], 'ago'];
 function timeago(e){
   var timeagoTime = [];
 //calulate time diffrence => the turn to months etc, then timeago
-//check relative => normal
-  console.log(parseInt(Date.now().toString()));
-  console.log(Date.now().toString() - e.TimeStamp)
-var date = new Date(parseInt(Date.now().toString()) - e.TimeStamp);
-  timeagoTime.push(date.getUTCFullYear() - 1970)//years
-  timeagoTime.push(date.getMonth() + 1) //zero is Jan
-console.log(timeagoTime);
-  console.log(date);
-}
-timeago({"UTC":true,"TimeStamp":(Date.now() - 1000)})
-
+//check special => relative => normal
 //Math.floor(Date.now() / 31536000000) + 1970 //year
 (Date.now() - (Math.floor(Date.now() / 31536000000) * 31536000000))/86400000 //day of the year
+}
+timeago({"UTC":true,"TimeStamp":(Date.now() - 1000)})
