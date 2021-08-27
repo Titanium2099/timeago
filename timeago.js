@@ -13,3 +13,4 @@ function timeago(e){
 (Date.now() - (Math.floor(Date.now() / 31536000000) * 31536000000))/86400000 //day of the year
 }
 timeago({"UTC":true,"TimeStamp":(Date.now() - 1000)})
+//should be 238 days gives 251 possible becuause of leap years
