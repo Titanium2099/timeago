@@ -7,9 +7,11 @@ var aTime = [
 ]; //sorted in [[text],[minimum value],[maximum value], generic text] value in milliseconds
 var multiTime = [] //
 function timeago(e) {
+  if((Date.now() - e.TimeStamp) < 60000){
+  return 'right now';
+}
   var currDate = new Date();
 var oldDate = new Date(e.TimeStamp);
-  if( 3540000
 if((currDate.getDate() == oldDate.getDate())&& ((Date.now() - e.TimeStamp) < 86400001)){
     //today at **:** (am/pm)
   function apm(){if(oldDate.getHours()>11){return 'pm';}else{return 'am';}};
