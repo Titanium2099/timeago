@@ -5,10 +5,6 @@ var relativeTime = [
   [60000, 3600000, 86400000, 604800000, 2629800000, 31557600000],
   [], "about a ", " ago"
 ]; //sorted in [[text],[minimum value],[maximum value], generic text] value in milliseconds
-var agoTime = [
-  ["minute", "hour", "day", "week", "month", "year"], 'ago'
-];
-
 function timeago(e) {
   console.log(Date.now() - e.TimeStamp)
   for (var aa = 0; aa < relativeTime[1].length; aa++) {
