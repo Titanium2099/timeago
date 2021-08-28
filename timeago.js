@@ -14,6 +14,7 @@ if((currDate.getDate() == oldDate.getDate())&& ((Date.now() - e.TimeStamp) < 864
   function apm(){if(currDate.getHours()>11){return 'pm';}else{return 'am';}};
 return "Today at "+(((currDate.getHours() - 12)*(currDate.getHours()>12))+((currDate.getHours())*(currDate.getHours()<13))) + ':' + currDate.getMinutes() + apm();
 }else{
+  //about a **** ago
   for (var aa = 0; aa < aTime[1].length; aa++) {
     if ((aTime[1][(aTime[1].length - (aa + 1))] - 1) < (Date.now() - e.TimeStamp)) {
       return aTime[3] + aTime[0][aTime[1].length - (aa + 1)] + aTime[4]
