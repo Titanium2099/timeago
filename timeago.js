@@ -9,10 +9,11 @@ var multiTime = [] //
 function timeago(e) {
   var currDate = new Date();
 var oldDate = new Date(e.TimeStamp);
+  if( 3540000
 if((currDate.getDate() == oldDate.getDate())&& ((Date.now() - e.TimeStamp) < 86400001)){
     //today at **:** (am/pm)
-  function apm(){if(currDate.getHours()>11){return 'pm';}else{return 'am';}};
-return "Today at "+(((currDate.getHours() - 12)*(currDate.getHours()>12))+((currDate.getHours())*(currDate.getHours()<13))) + ':' + currDate.getMinutes() + apm();
+  function apm(){if(oldDate.getHours()>11){return 'pm';}else{return 'am';}};
+return "Today at "+(((oldDate.getHours() - 12)*(oldDate.getHours()>12))+((oldDate.getHours())*(oldDate.getHours()<13))) + ':' + oldDate.getMinutes() + apm();
 }else{
   //about a **** ago
   for (var aa = 0; aa < aTime[1].length; aa++) {
