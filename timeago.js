@@ -14,8 +14,9 @@ function timeago(e) {
 var oldDate = new Date(e.TimeStamp);
 if((currDate.getDate() == oldDate.getDate())&& ((Date.now() - e.TimeStamp) < 86400001)){
     //today at **:** (am/pm)
+    function ot(a){if(a.toString().length == 1){return ('0'+ a.toString());}else{return a;}};
   function apm(){if(oldDate.getHours()>11){return 'pm';}else{return 'am';}};
-return "Today at "+(((oldDate.getHours() - 12)*(oldDate.getHours()>12))+((oldDate.getHours())*(oldDate.getHours()<13))) + ':' + oldDate.getMinutes() + apm();
+return "Today at "+(((oldDate.getHours() - 12)*(oldDate.getHours()>12))+((oldDate.getHours())*(oldDate.getHours()<13))) + ':' + ot(oldDate.getMinutes()) + apm();
 }else{
   //about a **** ago
   for (var aa = 0; aa < aTime[1].length; aa++) {
@@ -28,5 +29,5 @@ return "Today at "+(((oldDate.getHours() - 12)*(oldDate.getHours()>12))+((oldDat
 }
 console.log(timeago({
   "UTC": true,
-  "TimeStamp": (Date.now() - 700000000)
+  "TimeStamp": (Date.now() - 700000)
 }))
