@@ -21,13 +21,19 @@ return "Today at "+(((oldDate.getHours() - 12)*(oldDate.getHours()>12))+((oldDat
   //about a **** ago
   for (var aa = 0; aa < aTime[1].length; aa++) {
     if ((aTime[1][(aTime[1].length - (aa + 1))] - 1) < (Date.now() - e.TimeStamp)) {
+      //about * *** ago
+      console.log((Date.now() - e.TimeStamp)/(aTime[1][(aTime[1].length - (aa + 1))] - 1) > 1)
+      if(Math.floor((Date.now() - e.TimeStamp)/(aTime[1][(aTime[1].length - (aa + 1))] - 1)) > 1){
+        return 'about ' + Math.floor((Date.now() - e.TimeStamp)/(aTime[1][(aTime[1].length - (aa + 1))] - 1)) + ' ' +aTime[0][aTime[1].length - (aa + 1)] + 's' + aTime[4];
+      }else{
       return aTime[3] + aTime[0][aTime[1].length - (aa + 1)] + aTime[4]
       break;
+      }
     }
   }
 }
 }
 console.log(timeago({
   "UTC": true,
-  "TimeStamp": (Date.now() - 700000)
+  "TimeStamp": (Date.now() - 70000000)
 }))
