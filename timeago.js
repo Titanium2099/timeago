@@ -6,12 +6,12 @@ timeago.prototype.timeago = function(e) {
     [60000, 3600000, 86400000, 604800000, 2629800000, 31557600000],
     [], "about a ", " ago"
   ]; //sorted in [[text],[minimum value],[maximum value], generic text] value in milliseconds
-  if ((Date.now() - e.TimeStamp) < 60000) {
+  if ((Date.now() - e) < 60000) {
     return 'right now';
   }
   var currDate = new Date();
-  var oldDate = new Date(e.TimeStamp);
-  if ((currDate.getDate() == oldDate.getDate()) && ((Date.now() - e.TimeStamp) < 86400001)) {
+  var oldDate = new Date(e);
+  if ((currDate.getDate() == oldDate.getDate()) && ((Date.now() - e) < 86400001)) {
     //today at **:** (am/pm)
     function ot(a) {
       if (a.toString().length == 1) {
@@ -32,11 +32,11 @@ timeago.prototype.timeago = function(e) {
   } else {
     //about a **** ago
     for (var aa = 0; aa < aTime[1].length; aa++) {
-      if ((aTime[1][(aTime[1].length - (aa + 1))] - 1) < (Date.now() - e.TimeStamp)) {
+      if ((aTime[1][(aTime[1].length - (aa + 1))] - 1) < (Date.now() - e)) {
         //about * *** ago
-        console.log((Date.now() - e.TimeStamp) / (aTime[1][(aTime[1].length - (aa + 1))] - 1) > 1)
-        if (Math.floor((Date.now() - e.TimeStamp) / (aTime[1][(aTime[1].length - (aa + 1))] - 1)) > 1) {
-          return 'about ' + Math.floor((Date.now() - e.TimeStamp) / (aTime[1][(aTime[1].length - (aa + 1))] - 1)) + ' ' + aTime[0][aTime[1].length - (aa + 1)] + 's' + aTime[4];
+        console.log((Date.now() - e) / (aTime[1][(aTime[1].length - (aa + 1))] - 1) > 1)
+        if (Math.floor((Date.now() - e) / (aTime[1][(aTime[1].length - (aa + 1))] - 1)) > 1) {
+          return 'about ' + Math.floor((Date.now() - e) / (aTime[1][(aTime[1].length - (aa + 1))] - 1)) + ' ' + aTime[0][aTime[1].length - (aa + 1)] + 's' + aTime[4];
         } else {
           return aTime[3] + aTime[0][aTime[1].length - (aa + 1)] + aTime[4]
           break;
