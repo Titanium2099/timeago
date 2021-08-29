@@ -10,6 +10,7 @@ then create a new timeago object:
 var ta = new timeago();
 console.log(ta.timeago(Date.now()));
 ```
+Yep, its that easy!
 # Output patterns
 * about a **** ago EG: about an hour ago
 * about * *** ago EG: about 5 hours ago
