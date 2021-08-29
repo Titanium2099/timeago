@@ -8,5 +8,5 @@ First, load the plugin:
 then create a new timeago object:
 ```javascript
 var ta = new timeago();
-console.log(ta.timeago(Date.now));
+console.log(ta.timeago(Date.now()));
 ```
