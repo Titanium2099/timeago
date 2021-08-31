@@ -17,4 +17,4 @@ Yep, its that easy!
 * today at **:** (am/pm) EG: today at 5:47pm
 * right now
 # License
-Licensed under [MIT](https://github.com/Titanium2099/timeago/blob/main/LICENSE)
+Licensed under the [MIT License](https://github.com/Titanium2099/timeago/blob/main/LICENSE).
